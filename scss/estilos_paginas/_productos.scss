@@ -1,0 +1,33 @@
+.productos__title {
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.galeria {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    &__cerveza {
+        margin-bottom: 50px;
+	    margin-top: 50px;
+    }
+    &__precio {
+        border: 1px dotted #000000;
+        border-radius: 50%;
+        display: inline-block;
+        padding: 20px;
+        margin-top: 20px;
+    }
+    &__precio:hover {
+        border: 2px solid #d69f27;    
+    }
+    &__link {
+        text-decoration: none;
+	    color: #000000;
+	    font-size: 20px;
+    }
+}

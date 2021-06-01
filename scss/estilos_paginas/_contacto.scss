@@ -1,0 +1,45 @@
+.title__contacto {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+    padding: 10rem;
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+    border: 1px dotted black;
+    border-radius: 1rem;
+    &__label {
+        margin: 1rem 1rem;
+        font-size: 2rem;
+    }
+    &__input, &__consulta {
+        padding: 1rem;
+        background-color: rgb(242, 247, 255);
+        border: 1px solid black;
+        border-radius: 1rem;
+        margin-bottom: 2rem
+    }
+    &__input--btn {
+        @extend .reserva__input--btn;
+        margin: 0 auto;
+        margin-top: 2rem;
+        padding: 2rem;
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1px) and (max-width: 968px) {
+    .contacto {
+        padding: 2rem;
+        &__label {
+            text-align: center;
+        }
+        &__input, &__consulta {
+            padding: 2rem;
+        }
+    }
+}

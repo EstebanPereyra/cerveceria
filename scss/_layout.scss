@@ -1,0 +1,40 @@
+/* Estilos generales */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  /**Reset para REM - 1rem = 10px**/ }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  font-family: 'Special Elite', cursive;
+  max-width: 120rem;
+  margin: 0 auto;
+   }
+
+@media only screen and (min-width: 320px) and (max-width: 968px) {
+   body {padding: 1rem;}}
+
+img {
+  max-width: 100%; }
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1rem;
+}

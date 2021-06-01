@@ -1,0 +1,39 @@
+
+// Seccion nosotros index
+
+.nosotros {
+    height: 100%;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-content: center;
+    align-items: center;
+    &__prestacion {
+        flex-basis: 50%;
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+    }
+    &__titulo {
+        text-align: center;
+    }
+    &__parrafo {
+        text-align: center;
+        font-size: 1.7rem;
+        line-height: 3.3rem;
+        padding: 2rem;
+    }
+    &__imagen {
+        flex-basis: calc(50% - 3rem);
+    }
+}
+
+@media only screen and (min-width: 1px) and (max-width: 968px) {
+    .nosotros {
+        flex-direction:  column;
+        &__imagen {
+            display: none;
+        }
+    }
+}

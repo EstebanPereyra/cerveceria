@@ -1,0 +1,50 @@
+* {margin: 0;
+padding: 0;
+box-sizing: border-box;}
+
+body {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+header {
+	height: 100px;
+	background-color: #000000;
+}
+
+.productos__title {
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.galeria {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.galeria__cerveza {
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
+.galeria__precio {
+	border: 1px dotted #000000;
+	border-radius: 50%;
+	display: inline-block;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+.galeria__precio:hover {
+	border: 2px solid #d69f27;
+}
+.galeria__link {
+	text-decoration: none;
+	color: #000000;
+	font-size: 20px;
+}
