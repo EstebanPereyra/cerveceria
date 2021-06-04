@@ -19,6 +19,9 @@ do {
     let cervezas = new Producto(nombre, precio);
     productos.push(cervezas);
     console.log(cervezas.sumaIva());
+    productos.sort(function(a,b) {
+        return a.precio - b.precio
+    })
     condicion = confirm('¿Quieres seguir cargando productos?')
 } while (condicion != false);
 
