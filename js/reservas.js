@@ -31,8 +31,8 @@ function hacerReserva () {
 //Cantidad de reservas
 let cantidadReservas = parseInt(prompt('Ingrese la cantidad de reservas en una noche'));
 
-//Creo un objeto donde voy a guardar los nuevos objetos
-let reservas = {};
+//Creo un array donde voy a guardar los nuevos objetos
+let reservas = [];
 
 //Creo un bucle donde en cada vuelta creo un nuevo objeto y lo agrego a mi objeto cantidadReservas
 for(let i = 0; i < cantidadReservas; i++) {
@@ -48,3 +48,24 @@ for(let prop in reservas) {
     //Puedo cambiar el estado de todos los objetos creados
     reservas[prop].cambioEstado('Reservado');
 };
+
+// CONSIGNA 2:Modificar etiquetas existentes en función del resultado de operaciones
+
+// Nos ubicamos dentro del elemento del DOM donde voy a crear más elementos
+
+let contenedor = document.getElementById('reserva');
+
+//Creamos un bucle donde mostramos todas las reservas realizadas a través del DOOM
+for(let element of reservas) {
+    //Creamos el elemento div en el DOM
+    let div = document.createElement('div');
+    //Agregamos HTML dentro del elemento creado
+    div.innerHTML = `<h2>¡Hola ${element.nombre}!</h2>
+                    <p>Tu reserva para el día <b> ${element.fecha} </b>fue realizada con éxito</p>
+                    <p>¡Te esperamos a vos y a tus <b> ${element.invitados} </b>invitados. Nos esforzaremos
+                    para que pasen un momento inolvidable!</p>
+                    <hr>`
+    // Incorporamos lo que creamos dentro de nuestra estructura HTML
+    contenedor.appendChild(div);
+}
+

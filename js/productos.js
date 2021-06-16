@@ -1,56 +1,63 @@
-//Declaramos un array de productos para almacenar objetos
-const productos = [];
+// Array de productos
+const productos = [{ id: 1,
+                     img: 'img/productos/1.jpg',  
+                     producto: 'Rubia clásica', 
+                     descripcion: 'Lorem Lorem',
+                     precio: 150,
+                     },
+                  {  id: 2,  
+                    img: 'img/productos/2.jpg',
+                    producto: "Chop clásico artesanal", 
+                    descripcion: 'Lorem Lorem',
+                    precio: 350 },
+                  {  id: 3,  
+                    img: 'img/productos/3.jpg',
+                    producto: "Refrezcante playa", 
+                    descripcion: 'Lorem Lorem',
+                    precio: 500},
+                  {  id: 4,
+                    img: 'img/productos/4.jpg',  
+                    producto: "Rubia Premium" , 
+                    descripcion: 'Lorem Lorem',
+                    precio: 450},
+                  { id: 5,  
+                    img: 'img/productos/5.jpg',
+                    producto: "Colorada Premium", 
+                    descripcion: 'Lorem Lorem',
+                    precio: 220 },
+                  {  id: 6,  
+                    img: 'img/productos/6.jpg',
+                    producto: "Beer Limon", 
+                    descripcion: 'Lorem Lorem',
+                    precio: 350 },
+                  {  id: 7,  
+                    img: 'img/productos/7.jpg',
+                    producto: "Colorada clásica",
+                    descripcion: 'Lorem Lorem',
+                    precio: 300},
+                  {  id: 8,
+                    img: 'img/productos/8.jpg',
+                    producto: "Sout premium",
+                    descripcion: 'Lorem Lorem',
+                    precio: 475}];
 
-//Crear clase constructora de mi producto
-class Producto {
-    constructor(nombre, precio) {
-        this.nombre  = nombre.toUpperCase();
-        this.precio  = parseFloat(precio);
-        this.vendido = false;
-    }
-    sumaIva() {
-        return (this.precio*21/100) + this.precio;
-    }
-}
+// Nos ubicamos en el elemento del DOM donde vamos a crear más elemtos                    
+let galeria = document.getElementById('galeria');
 
-do {
-    let nombre = prompt('Ingrese el nombre del producto');
-    let precio = prompt('Ingrese el precio');
-    let cervezas = new Producto(nombre, precio);
-    productos.push(cervezas);
-    console.log(cervezas.sumaIva());
-    productos.sort(function(a,b) {
-        return a.precio - b.precio
-    })
-    condicion = confirm('¿Quieres seguir cargando productos?')
-} while (condicion != false);
+// Creamos elementos dentro del DOM
 
-console.log(productos);
-
-
-/*productos.push(new Producto("Rubia clásica",'150'));
-productos.push(new Producto("Chop clásico artesanal", "350"));
-productos.push(new Producto("Refrezcante playa", "500"));
-productos.push(new Producto("Rubia Premium", "450"));
-productos.push(new Producto("Colorada Premium", "220"));
-productos.push(new Producto("Beer Limon", "350"));
-productos.push(new Producto("Colorada clásica", "300"));
-productos.push(new Producto("Sout premium", "475"));*/
-
-//Iteramos el array con for...of para modificarlos a todos
-/*for (const producto of productos) {
-    producto.sumaIva();}
-
-    console.log(Producto([0]));*/
-
-
-// Array de productos    
-/*
-const productos = [{ id: 1,  producto: "Rubia clásica", precio: 150 },
-                  {  id: 2,  producto: "Chop clásico artesanal", precio: 350 },
-                  {  id: 3,  producto: "Refrezcante playa"  , precio: 500},
-                  {  id: 4,  producto: "Rubia Premium" , precio: 450},
-                  { id: 5,  producto: "Colorada Premium", precio: 220 },
-                  {  id: 6,  producto: "Beer Limon", precio: 350 },
-                  {  id: 7,  producto: "Colorada clásica"  , precio: 300},
-                  {  id: 8,  producto: "Sout premium" , precio: 475}];*/
+for(let element of productos) {
+    //Creamos el elemento div
+    let div = document.createElement('div');
+    //Agregar clase al div creado
+    div.className = 'galeria__cerveza';
+    // Agregamos HTML dentro del elemento div creado
+    div.innerHTML = `<img src='${element.img}' class='galeria__img'>
+                    <h3 class="galeria__title">${element.producto}</h3>
+                    <p class="galeria__descripcion">${element.descripcion}</p>
+                    <div class="galeria__precio">
+                        <a href="#" class="galeria__link">$${element.precio}</a>
+                    </div>`
+    // Agregamos el elemento div creado (con el contenido html) dentro del contenedor con clase galeria
+    galeria.appendChild(div);
+};
