@@ -1,71 +1,68 @@
-//Crear un objeto con función constructora
-function Reserva(nombre, invitados, fecha) {
-    this.nombre = nombre;
-    this.invitados   = invitados;
-    this.fecha  = fecha;
-    this.estado = 'pendiente';
-    //Metodo para cambiar el estado
-    this.cambioEstado = (estado) => {
-        this.estado = estado;
-        return alert('Ha cambiado su reserva existosamente a: ' + this.estado);
-    // Metodo cambio de fecha de reserva
-    this.cambioFecha = (fechaNueva) => {
-        this.fecha = fechaNueva;
-        return alert('Ha cambiado su fecha de reserva existosamente a: ' + this.fechaNueva);    }
-    };
-};
+//Recogo los datos del formulario
+let nombre = document.getElementById('nombre').value;
+let invitados = document.getElementById('cantidad').value;
+let fechaReserva = document.getElementById('fecha').value;
 
-// Crear funcion que pida los datos necesarios para la reserva
+// Seleccionar elementos del DOM que se manipulana a través de JavaScript
+let abrir = document.getElementsByClassName("reservar");
+let modalC = document.getElementById('modalContainer');
 
-function hacerReserva () {
-    let nombre = prompt('Ingrese su Nombre y Apellido');
-    let invitados = parseInt(prompt('Ingrese el número de invitados'));
-    let fecha = prompt('Ingrese la fecha de su reserva');
-
-    //con estos datos creo un nuevo objeto y lo devuelvo
-
-    let obj = new Reserva (nombre, invitados, fecha);
-    return obj;
-};
-
-//Cantidad de reservas
-let cantidadReservas = parseInt(prompt('Ingrese la cantidad de reservas en una noche'));
-
-//Creo un array donde voy a guardar los nuevos objetos
-let reservas = [];
-
-//Creo un bucle donde en cada vuelta creo un nuevo objeto y lo agrego a mi objeto cantidadReservas
-for(let i = 0; i < cantidadReservas; i++) {
-    let aux = hacerReserva(i);
-    reservas[i] = aux;
-};
-
-//Con este bucle puedo recorrer cada propiedad del objeto
-
-for(let prop in reservas) {
-    //Puedo ver los objetos que se crearon y guardaron
-    console.log(reservas[prop]);
-    //Puedo cambiar el estado de todos los objetos creados
-    reservas[prop].cambioEstado('Reservado');
-};
-
-// CONSIGNA 2:Modificar etiquetas existentes en función del resultado de operaciones
-
-// Nos ubicamos dentro del elemento del DOM donde voy a crear más elementos
-
-let contenedor = document.getElementById('reserva');
-
-//Creamos un bucle donde mostramos todas las reservas realizadas a través del DOOM
-for(let element of reservas) {
-    //Creamos el elemento div en el DOM
-    let div = document.createElement('div');
-    //Agregamos HTML dentro del elemento creado
-    div.innerHTML = `<h2>¡Hola ${element.nombre}!</h2>
-                    <p>Tu reserva para el día <b> ${element.fecha} </b>fue realizada con éxito</p>
-                    <p>¡Te esperamos a vos y a tus <b> ${element.invitados} </b>invitados. Nos esforzaremos
+//Tomar elementos del formulario
+modalC.innerHTML = `<div class="modalContenedor__modal modalContenedor__modalClose" id="modal">
+                    <p class="modalContenedor__close" id="cerrar">X</p>
+                    <img class="modalContenedor__img" src="img/confirmation.png" alt="confirmation">
+                    <h2 class='modal__title'>¡Hola <b id="name">${nombre}</b></h2>
+                    <p class='modal__parrafo'>Tu reserva para el día <b id="diaReserva"> ${fechaReserva} </b>fue realizada con éxito</p>
+                    <p class='modal__parrafo'>¡Te esperamos a vos y a tus <b id="invitados"> ${invitados} </b>invitados. Nos esforzaremos
                     para que pasen un momento inolvidable!</p>
-                    <hr>`
-    // Incorporamos lo que creamos dentro de nuestra estructura HTML
-    contenedor.appendChild(div);
-}
+                    </div>`;
 
+//Seleccionar nuevos elementos del DOM creados a través de JavaScript
+let cerrar = document.getElementById('cerrar');
+let modal = document.getElementById('modal');
+
+//// Crear MODAL
+
+//Bucle que elimina el evento por defecto al hacer click en los botones reservar
+
+for (i = 0; i < abrir.length; i++) {
+    abrir[i].addEventListener("click", function (e) {
+        e.preventDefault();
+    });
+};
+
+//Bucle que, al escuchar la función click en los botones reservar, muestra modal
+
+for (x = 0; x < abrir.length; x++) {
+    abrir[x].addEventListener("click", MostrarModal);
+
+    function MostrarModal() {
+        // Cambiar estilos de modal
+        modalC.style.opacity = '1';
+        modalC.style.visibility = 'visible';
+        modal.classList.toggle('modalContenedor__modalClose');
+    }
+};
+
+//Cierra modal al hacer click en el boton cerrar
+cerrar.addEventListener('click', CerrarModal);
+function CerrarModal() {
+    modal.classList.toggle('modalContenedor__modalClose');
+    setTimeout(function () {
+        modalC.style.opacity = '0';
+        modalC.style.visibility = 'hidden';
+    }, 900);
+};
+
+//Cierra modal al hacer click en cualquier lugar fuera de modal
+window.addEventListener('click', function (e) {
+    console.log(e.target)
+    if (e.target == modalC) {
+        modal.classList.toggle('modalContenedor__modalClose');
+
+        setTimeout(function () {
+            modalC.style.opacity = '0';
+            modalC.style.visibility = 'hidden';
+        }, 900)
+    }
+})

@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Reserva una mesa para conocer nuestro exclusivo bar de cerveza artesanal">
-    <meta name="keywords" content="Cerveceria, Cerveza, Cerveza Artesanal, Bar, Bares, Reserva en bar, Venta de cerveza">
+    <meta name="keywords"
+        content="Cerveceria, Cerveza, Cerveza Artesanal, Bar, Bares, Reserva en bar, Venta de cerveza">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
@@ -51,12 +52,12 @@
                 <h2 class="reserva__title">Mesa para 2</h2>
                 <form action="" class="reserva__form">
                     <label for="nombre" class="reserva__label">Nombre y apellido</label>
-                    <input type="text" id="nombre" class="reserva__input">
+                    <input type="text" id="nombre" class="reserva__input nombre">
                     <label for="cantidad" class="reserva__label">¿Cuántas personas están invitadas?</label>
-                    <input type="number" id="cantidad" max="2" class="reserva__input">
+                    <input type="number" id="cantidad" max="2" class="reserva__input cantidad">
                     <label for="fecha" class="reserva__label">Ingresa la fecha de reserva</label>
-                    <input type="date" id="fecha" class="reserva__input--fecha">
-                    <input type="submit" value="Reservar lugar" class="reserva__input--btn">
+                    <input type="date" id="fecha" class="reserva__input--fecha fecha">
+                    <button type="button" value="Reservar lugar" class="reserva__input--btn reservar" id="reservar">Reservar</button>
                 </form>
             </article>
 
@@ -65,12 +66,12 @@
                 <h2 class="reserva__title">Mesa para 4</h2>
                 <form action="" class="reserva__form">
                     <label for="nombre-2" class="reserva__label">Nombre y apellido</label>
-                    <input type="text" id="nombre-2" class="reserva__input">
+                    <input type="text" id="nombre" class="reserva__input nombre">
                     <label for="cantidad-2" class="reserva__label">¿Cuántas personas están invitadas?</label>
-                    <input type="number" id="cantidad-2" max="4" class="reserva__input">
+                    <input type="number" id="cantidad" max="4" class="reserva__input cantidad">
                     <label for="fecha-2" class="reserva__label">Ingresa la fecha de reserva</label>
-                    <input type="date" id="fecha-2" class="reserva__input--fecha">
-                    <input type="submit" value="Reservar lugar" class="reserva__input--btn">
+                    <input type="date" id="fecha" class="reserva__input--fecha fecha">
+                    <button type="button" value="Reservar lugar" class="reserva__input--btn reservar" id="reservar">Reservar</button>
                 </form>
             </article>
 
@@ -79,19 +80,19 @@
                 <h2 class="reserva__title">Mesa para 6</h2>
                 <form action="" class="reserva__form">
                     <label for="nombre-3" class="reserva__label">Nombre y apellido</label>
-                    <input type="text" id="nombre-3" class="reserva__input">
+                    <input type="text" id="nombre" class="reserva__input nombre">
                     <label for="cantidad-3" class="reserva__label">¿Cuántas personas están invitadas?</label>
-                    <input type="number" id="cantidad-3" max="6" class="reserva__input">
+                    <input type="number" id="cantidad" max="6" class="reserva__input cantidad">
                     <label for="fecha-3" class="reserva__label">Ingresa la fecha de reserva</label>
-                    <input type="date" id="fecha-3" class="reserva__input--fecha">
-                    <input type="submit" value="Reservar lugar" class="reserva__input--btn">
+                    <input type="date" id="fecha" class="reserva__input--fecha fecha">
+                    <button type="button" value="Reservar lugar" class="reserva__input--btn reservar" id="reservar">Reservar</button>
                 </form>
             </article>
         </div>
     </main>
     <!--Mensaje de reserva exitosa creado con JavaScript-->
-    <div id="reserva">
-
+    <div class="modalContenedor" id="modalContainer">
+        
     </div>
 
     <!-- Inicio de footer -->
