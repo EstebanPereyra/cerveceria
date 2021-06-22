@@ -525,8 +525,8 @@ h5 {
 }
 
 .modalContenedor__modal {
-  width: 40%;
-  height: 50%;
+  width: 70%;
+  height: 100%;
   background-color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -546,6 +546,7 @@ h5 {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   border-radius: 10px;
+  padding: 10rem;
 }
 
 .modalContenedor__img {
@@ -573,6 +574,10 @@ h5 {
   border-radius: 50%;
 }
 
+.modalContenedor__parrafo {
+  font-size: 2rem;
+}
+
 @media only screen and (min-width: 1px) and (max-width: 968px) {
   .reserva {
     -webkit-box-orient: vertical;
@@ -590,6 +595,14 @@ h5 {
   .reserva__input, .reserva__input--fecha, .reserva__input--btn, .contacto__input--btn {
     font-size: 2rem;
   }
+}
+
+.modalContenedor {
+  height: 100%;
+}
+
+.modalContenedor__modal {
+  padding: 2rem;
 }
 
 .title__contacto {

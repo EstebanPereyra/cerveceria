@@ -61,8 +61,8 @@
     align-items: center;
     text-align: center;
     &__modal {
-        width: 40%;
-        height: 50%;
+        width: 70%;
+        height: 100%;
         background-color: #ffffff;
         display: flex;
         flex-direction: column;
@@ -71,6 +71,7 @@
         transition: transform 1s;
         transform: translateY(0);
         border-radius: 10px;
+        padding: 10rem;
     }
     &__img {
         height: 50%;
@@ -92,6 +93,9 @@
         cursor: pointer;
         border-radius: 50%;
     }
+    &__parrafo {
+        font-size: 2rem;
+    }
 }
 
 @media only screen and (min-width: 1px) and (max-width: 968px) { 
@@ -108,5 +112,12 @@
         &__input, &__input--fecha, &__input--btn {
             font-size: 2rem;
         }
+    }
+}
+
+.modalContenedor {
+    height: 100%;
+    &__modal {
+        padding: 2rem;
     }
 }
