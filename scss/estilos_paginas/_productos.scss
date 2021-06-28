@@ -3,31 +3,26 @@
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
+.tablePersonalizada {
+    font-size: 1.5rem;
+}
 
-.galeria {
-	display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    &__cerveza {
-        margin-bottom: 50px;
-	    margin-top: 50px;
+.galeriaProductos {
+    &__caja {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
-    &__precio {
-        border: 1px dotted #000000;
-        border-radius: 50%;
-        display: inline-block;
-        padding: 20px;
-        margin-top: 20px;
+    &__title {
+        font-size: 2rem;
+        text-align: center;
     }
-    &__precio:hover {
-        border: 2px solid #d69f27;    
+    &__parrafo {
+        font-size: 1.5rem;
+        text-align: center;
     }
-    &__link {
-        text-decoration: none;
-	    color: #000000;
-	    font-size: 20px;
+    &__btn {
+        font-size: 2rem;
     }
 }

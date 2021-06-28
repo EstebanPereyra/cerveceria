@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Venta de cerveza artesanal">
-    <meta name="keywords" content="Cerveceria, Cerveza, Cerveza Artesanal, Bar, Bares, Reserva en bar, Venta de cerveza">
+    <meta name="description" content="Venta de cerveza artesanal">
+    <meta name="keywords"
+        content="Cerveceria, Cerveza, Cerveza Artesanal, Bar, Bares, Reserva en bar, Venta de cerveza">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="scss/estilos.css">
     <title>Ceres - Productos</title>
@@ -38,18 +41,121 @@
                 </nav>
             </div>
         </div>
-        </div>
-        </div>
-
     </header>
-    <main>
-		<h1 class="productos__title">NUESTRAS CERVEZAS</h1>
-		 <div class="galeria" id="galeria">
-			
-			<!--Productos creados a través de Javascript-->
+    <!-- Fin de header -->
+    <!-- Inicio carrito de compras -->
+    <div class="dropdown">
+        <a class="btn btn-outline-dark dropdown-toggle" style="margin-top: 5px; border-radius: 10px; padding: 10px;" href="#" role="button" id="dropdownMenuLink"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <h2>Carrito</h2>
+            <img src="img/carrito.png" alt="carrito" style="width: 30px;">
+        </a>
 
-		</div> 
-	</main>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li class="dropdown-item" href="#">
+                <div id="carrito">
+                    <table id="lista-carrito" class="table">
+                        <thead class="table-light">
+                            <tr class="tablePersonalizada">
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th></th>
+                            </tr>
+                        <tbody></tbody>
+                        </thead>
+                    </table>
+                    <a href="" id="vaciar-carrito" type="button" class="btn btn-dark">Vaciar Carrito</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Fin carrito de compras -->
+    <!-- Inicio lista productos -->
+    <main>
+        <h1 class="productos__title">NUESTRAS CERVEZAS</h1>
+        <div id="lista-productos" class="container galeriaProductos">
+            <div class="card-group galeriaProductos__grupoCard">
+                <div class="card galeria  galeriaProductos__caja">
+                    <img src="img/productos/1.jpg" class="card-img-top galeriaProductos__img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title galeriaProductos__title">Rubia clásica</h5>
+                        <p class="card-text galeriaProductos__parrafo">Lorem Lorem</p>
+                        <p class="card-text galeriaProductos__parrafo" id="precio">$<span>150</span></p>
+                        <button type="button" class="btn btn-outline-dark agregar-carrito galeriaProductos__btn" data-id="1">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+                <div class="card galeria galeriaProductos__caja">
+                    <img src="img/productos/2.jpg" class="card-img-top galeriaProductos__img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title galeriaProductos__title">Chop clásico artesanal</h5>
+                        <p class="card-text galeriaProductos__parrafo">Lorem Lorem</p>
+                        <p class="card-text galeriaProductos__parrafo" id="precio">$<span>350</span></p>
+                        <button type="button" class="btn btn-outline-dark agregar-carrito galeriaProductos__btn" data-id="2">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+                <div class="card galeria galeriaProductos__caja">
+                    <img src="img/productos/3.jpg" class="card-img-top galeriaProductos__img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title galeriaProductos__title">Refrezcante playa</h5>
+                        <p class="card-text galeriaProductos__parrafo">Lorem Lorem</p>
+                        <p class="card-text galeriaProductos__parrafo" id="precio">$<span>500</span></p>
+                        <button type="button" class="btn btn-outline-dark agregar-carrito galeriaProductos__btn" data-id="3">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+                <div class="card galeria galeriaProductos__caja">
+                    <img src="img/productos/4.jpg" class="card-img-top galeriaProductos__img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title galeriaProductos__title">Rubia Premium</h5>
+                        <p class="card-text galeriaProductos__parrafo">Lorem Lorem</p>
+                        <p class="card-text galeriaProductos__parrafo" id="precio">$<span>450</span></p>
+                        <button type="button" class="btn btn-outline-dark agregar-carrito galeriaProductos__btn" data-id="4">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+            </div><br><br>
+
+            <div class="card-group">
+                <div class="card galeria galeriaProductos__caja">
+                    <img src="img/productos/5.jpg" class="card-img-top galeriaProductos__img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title galeriaProductos__title">Colorada Premium</h5>
+                        <p class="card-text galeriaProductos__parrafo">Lorem Lorem</p>
+                        <p class="card-text galeriaProductos__parrafo" id="precio">$<span>220</span></p>
+                        <button type="button" class="btn btn-outline-dark agregar-carrito galeriaProductos__btn" data-id="5">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+                <div class="card galeria galeriaProductos__caja">
+                    <img src="img/productos/6.jpg" class="card-img-top galeriaProductos__img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title galeriaProductos__title">Beer Limon</h5>
+                        <p class="card-text galeriaProductos__parrafo">Lorem Lorem</p>
+                        <p class="card-text galeriaProductos__parrafo" id="precio">$<span>350</span></p>
+                        <button type="button" class="btn btn-outline-dark agregar-carrito galeriaProductos__btn" data-id="6">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+                <div class="card galeria galeriaProductos__caja">
+                    <img src="img/productos/7.jpg" class="card-img-top galeriaProductos__img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title galeriaProductos__title">Colorada clásica</h5>
+                        <p class="card-text galeriaProductos__parrafo">Lorem Lorem</p>
+                        <p class="card-text galeriaProductos__parrafo" id="precio">$<span>300</span></p>
+                        <button type="button" class="btn btn-outline-dark agregar-carrito galeriaProductos__btn" data-id="7">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+                <div class="card galeria galeriaProductos__caja">
+                    <img src="img/productos/8.jpg" class="card-img-top galeriaProductos__img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title galeriaProductos__title">Sout premium</h5>
+                        <p class="card-text galeriaProductos__parrafo">Lorem Lorem</p>
+                        <p class="card-text galeriaProductos__parrafo" id="precio">$<span>475</span></p>
+                        <button type="button" class="btn btn-outline-dark agregar-carrito galeriaProductos__btn" data-id="8">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Fin lista productos -->
     <!-- Inicio de footer -->
     <footer>
         <div class="footer">
@@ -72,8 +178,11 @@
 
     </footer>
     <!-- Fin de Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/605289fcd0.js" crossorigin="anonymous"></script>
-	<script src="js/productos.js"></script>
+    <script src="js/carrito.js"></script>
 </body>
 
 </html>
