@@ -1,6 +1,96 @@
-//Formulario 1
-let formulario1 = document.getElementById("formulario");
+//Formulario Nº 1
+
+//CÓDIGO PARA VALIDACIÓN DE FORMULARIO Nº 1
+
+//Variables y constantes
+const formulario1 = document.getElementById("formulario");
+const ReservarBtn = document.getElementById('reservar');
+const nombreApellido = document.getElementById('nombre');
+const invitadosReserva = document.getElementById('cantidad');
+const fechaReserva_1 = document.getElementById('fecha');
+
+// Fecha
+let today = new Date();
+let nuevoToday = today.toLocaleDateString();
+// let dd = today.getDate();
+// let mm = today.getMonth() + 1; //Enero is 0!
+// let yyyy = today.getFullYear();
+// let today = yyyy + '-' + mm + '-' + dd;
+// let formatoToday = today.toISOString();
+
+console.log(nuevoToday);
+
+// fechaReserva.setAttribute('min', today);
+
+
+//Evento 
+
+//Validar formulario
+eventListeners();
+
+function eventListeners() {
+    //Cuando la app arranca
+    document.addEventListener('DOMContentLoaded', iniciarApp);
+
+    //Campos del formulario
+    nombreApellido.addEventListener('blur', validarFormulario);
+    invitadosReserva.addEventListener('blur', validarFormulario);
+    fechaReserva_1.addEventListener('blur', validarFormulario);
+    // fechaReserva_1.addEventListener('blur', validarFecha);
+
+}
+
+function iniciarApp() {
+    ReservarBtn.disabled = true;
+    ReservarBtn.classList.add('reservar');
+}
+
+//validar Fecha
+// function validarFecha() {
+//     if(fechaReserva_1.value <= nuevoToday) {
+//         console.log('fecha reserva anterior a la actual')
+//     }
+// }
+
+// Valida el formulario
+function validarFormulario(e) {
+    if(e.target.value.length > 0) {
+        const error = document.querySelector('h3.error');
+        if(error) {
+        error.remove();}
+        e.target.style.borderBottomColor = 'black';
+
+    } else {
+        e.target.style.borderBottomColor = 'rgb(204, 138, 15)';
+        mostrarError();
+    }
+
+    if(nombreApellido.value !== '' && invitadosReserva.value !== '' && fechaReserva_1.value !== '') {
+        ReservarBtn.disabled = false;
+        ReservarBtn.classList.remove('reservar');
+    } else {
+        console.log('Hay campos por validar');
+    }
+}
+
+//Mesaje de error
+
+function mostrarError() {
+    const mensajeError = document.createElement('h3');
+    mensajeError.textContent = 'Todos los campos son obligatorios';
+    mensajeError.classList.add('error');
+
+    const errores = document.querySelectorAll('.error');
+    if(errores.length === 0) {
+        formulario1.appendChild(mensajeError);
+    }
+}
+
+//CÓDIGO PARA MOSTRAR VENTANA MODAL
+
 formulario1.addEventListener("submit", mostrarModal);
+
+
 
 function mostrarModal(e){
     //Cancelamos el comportamiento del evento
@@ -23,8 +113,7 @@ function mostrarModal(e){
     modalC.style.opacity = '1';
     modalC.style.visibility = 'visible';
     modalC.style.transition = '0.8s';                
-    modal.classList.toggle('modalContenedor__modalClose');
-    
+    modal.classList.toggle('modalContenedor__modalClose'); 
     //Cierra modal al hacer click en el boton cerrar
     cerrar.addEventListener('click', CerrarModal);
     function CerrarModal() {
@@ -35,8 +124,76 @@ function mostrarModal(e){
     }, 900);
 };}
 
-//Formulario 2
-let formulario2 = document.getElementById("formulario-2");
+//FORMULARIO Nª 2
+
+//CÓDIGO PARA VALIDACIÓN DE FORMULARIO Nº 2
+
+//Variables y constantes
+const formulario2 = document.getElementById("formulario-2");
+const ReservarBtn2 = document.getElementById('reservar-2');
+const nombreApellido2 = document.getElementById('nombre-2');
+const invitadosReserva2 = document.getElementById('cantidad-2');
+const fechaReserva_2 = document.getElementById('fecha-2');
+
+//Evento 
+
+//Validar formulario
+eventListeners2();
+
+function eventListeners2() {
+    //Cuando la app arranca
+    document.addEventListener('DOMContentLoaded', iniciarApp2);
+
+    //Campos del formulario
+    nombreApellido2.addEventListener('blur', validarFormulario2);
+    invitadosReserva2.addEventListener('blur', validarFormulario2);
+    fechaReserva_2.addEventListener('blur', validarFormulario2);
+    // fechaReserva_1.addEventListener('blur', validarFecha);
+
+}
+
+function iniciarApp2() {
+    ReservarBtn2.disabled = true;
+    ReservarBtn2.classList.add('reservar');
+}
+
+// Valida el formulario
+function validarFormulario2(e) {
+    if(e.target.value.length > 0) {
+        const error = document.querySelector('h3.error');
+        if(error) {
+        error.remove();}
+        e.target.style.borderBottomColor = 'black';
+
+    } else {
+        e.target.style.borderBottomColor = 'rgb(204, 138, 15)';
+        mostrarError2();
+    }
+
+    if(nombreApellido2.value !== '' && invitadosReserva2.value !== '' && fechaReserva_2.value !== '') {
+        ReservarBtn2.disabled = false;
+        ReservarBtn2.classList.remove('reservar');
+    } else {
+        console.log('Hay campos por validar');
+    }
+}
+
+//Mesaje de error
+
+function mostrarError2() {
+    const mensajeError = document.createElement('h3');
+    mensajeError.textContent = 'Todos los campos son obligatorios';
+    mensajeError.classList.add('error');
+
+    const errores = document.querySelectorAll('.error');
+    if(errores.length === 0) {
+        formulario2.appendChild(mensajeError);
+    }
+}
+
+
+// Mostrar MODAL
+
 formulario2.addEventListener("submit", mostrarModal2);
 
 function mostrarModal2(e){
@@ -72,8 +229,74 @@ function mostrarModal2(e){
     }, 900);
 };}
 
-//Formulario 3
-let formulario3 = document.getElementById("formulario-3");
+//FORMULARIO Nª 3
+
+//CÓDIGO PARA VALIDACIÓN DE FORMULARIO Nº 3
+
+//Variables y constantes
+const formulario3 = document.getElementById("formulario-3");
+const ReservarBtn3 = document.getElementById('reservar-3');
+const nombreApellido3 = document.getElementById('nombre-3');
+const invitadosReserva3 = document.getElementById('cantidad-3');
+const fechaReserva_3 = document.getElementById('fecha-3');
+
+//Evento 
+
+//Validar formulario
+eventListeners3();
+
+function eventListeners3() {
+    //Cuando la app arranca
+    document.addEventListener('DOMContentLoaded', iniciarApp3);
+
+    //Campos del formulario
+    nombreApellido3.addEventListener('blur', validarFormulario3);
+    invitadosReserva3.addEventListener('blur', validarFormulario3);
+    fechaReserva_3.addEventListener('blur', validarFormulario3);
+    // fechaReserva_1.addEventListener('blur', validarFecha);
+
+}
+
+function iniciarApp3() {
+    ReservarBtn3.disabled = true;
+    ReservarBtn3.classList.add('reservar');
+}
+
+// Valida el formulario
+function validarFormulario3(e) {
+    if(e.target.value.length > 0) {
+        const error = document.querySelector('h3.error');
+        if(error) {
+        error.remove();}
+        e.target.style.borderBottomColor = 'black';
+
+    } else {
+        e.target.style.borderBottomColor = 'rgb(204, 138, 15)';
+        mostrarError3();
+    }
+
+    if(nombreApellido3.value !== '' && invitadosReserva3.value !== '' && fechaReserva_3.value !== '') {
+        ReservarBtn3.disabled = false;
+        ReservarBtn3.classList.remove('reservar');
+    } else {
+        console.log('Hay campos por validar');
+    }
+}
+
+//Mesaje de error
+
+function mostrarError3() {
+    const mensajeError = document.createElement('h3');
+    mensajeError.textContent = 'Todos los campos son obligatorios';
+    mensajeError.classList.add('error');
+
+    const errores = document.querySelectorAll('.error');
+    if(errores.length === 0) {
+        formulario3.appendChild(mensajeError);
+    }
+}
+
+// Mostrar MODAL
 formulario3.addEventListener("submit", mostrarModal3);
 
 function mostrarModal3(e){

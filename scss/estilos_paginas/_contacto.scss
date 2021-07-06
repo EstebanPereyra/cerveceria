@@ -32,6 +32,16 @@
     }
 }
 
+.errores {
+    background-color: rgb(204, 138, 15);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    color: #fff;
+    display: none;
+    font-size: 2rem;
+    padding: 10px;
+}
+
 @media only screen and (min-width: 1px) and (max-width: 968px) {
     .contacto {
         padding: 2rem;
