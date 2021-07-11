@@ -38,7 +38,7 @@ $( document ).ready(function()
             return false;
             }
         else{
-          $("#mensajeConsulta").fadeOut();}  
+          $("#mensajeConsulta").fadeOut();}
     });
 
 });
