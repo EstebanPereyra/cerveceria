@@ -1,4 +1,4 @@
-const jsonLocal = 'js/json/data.json';
+const jsonLocal = 'http://127.0.0.1:5500/js/json/data.json';
 
 let misDatos = [];
 $.getJSON(jsonLocal,function(data,status){
