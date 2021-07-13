@@ -38,6 +38,7 @@ function agregarProducto(e) {
         const productoSeleccionado = e.target.parentElement.parentElement;
         leerDatosProducto(productoSeleccionado);
     }
+    calcularTotal();
 }
 
 
@@ -50,6 +51,7 @@ function eliminarProducto(e) {
     // console.log(articulosCarrito);
     carritoHTML(); //Iterar sobre el carrito y mostrar HTML
         }
+        calcularTotal();
            }
 
 // Lee el contenido del producto al que le dimos click y extrae su contenido
@@ -99,9 +101,9 @@ function leerDatosProducto(producto) {
         articulosCarrito.forEach(producto => {
             const row = document.createElement('tr');
             row.innerHTML = `<td> <img src="${producto.imagen}" width='100'></td>
-                             <td class="tablePersonalizada">${producto.nombre}</td>
-                            <td class="tablePersonalizada">$${producto.precio}</td>
-                            <td class="tablePersonalizada">${producto.cantidad}</td>
+                             <td class="tablePersonalizada table__content">${producto.nombre}</td>
+                            <td class="tablePersonalizada table__content">$${producto.precio}</td>
+                            <td class="tablePersonalizada table__content">${producto.cantidad}</td>
                             <td class="tablePersonalizada"><a href="#" class="borrar-producto btn btn-dark" data-id="${producto.id}">X</a></td>`;
         
         //Agrega el HTML del Carrito en el tag <tbody>
@@ -124,17 +126,18 @@ function leerDatosProducto(producto) {
             contenedorCarrito.removeChild(contenedorCarrito.firstChild)
         }
     };
-    
-    // //Calcular el total del carrito
 
-    // function calcularTotal() {
-    //     let total = 0;
-    //     articulosCarrito.forEach((item) => {
-    //         let itemPorCantidad = parseInt(item.precio) * item.cantidad;
-    //         total = total + itemPorCantidad;
-    //     });
+    //Calcular el total del carrito
+  
+    function calcularTotal() {
+        let total = 0;
+        articulosCarrito.forEach((item) => {
+            let itemPorCantidad = parseInt(item.precio) * item.cantidad;
+            total = total + itemPorCantidad;
+        });
 
-    //     let filaTotal = document.createElement('td');
-    //     filaTotal.textContent = `TOTAL = ${total}`;
-    //     contenedorCarrito.appendChild(filaTotal);
-    // }
+        let filaTotal = document.createElement('td');
+        filaTotal.classList.add('total');
+        filaTotal.textContent = `TOTAL = $${total}`;
+        contenedorCarrito.appendChild(filaTotal);
+    }

@@ -9,19 +9,32 @@ const nombreApellido = document.getElementById('nombre');
 const invitadosReserva = document.getElementById('cantidad');
 const fechaReserva_1 = document.getElementById('fecha');
 
-// Fecha
-let today = new Date();
-let nuevoToday = today.toLocaleDateString();
-// let dd = today.getDate();
-// let mm = today.getMonth() + 1; //Enero is 0!
-// let yyyy = today.getFullYear();
-// let today = yyyy + '-' + mm + '-' + dd;
-// let formatoToday = today.toISOString();
-
-console.log(nuevoToday);
-
-// fechaReserva.setAttribute('min', today);
-
+// Fecha validar input tipo date - Formulario 1
+$(function () { 
+    //var dateToday = new Date(); 
+    
+    $('#fecha').datepicker().datepicker();
+    $('#fecha').datepicker('option', 'minDate', mdate());
+  
+    function mdate(){
+        // If current date is 1st or 15th & after 12:00pm disable current date
+        var startDate = new Date(), 
+        returnVal = 0,
+        dateToday = new Date(), 
+        getDate = dateToday.getDate(),
+        getHour = dateToday.getHours();      
+        if(getHour >= 12 && getDate == 1) {
+            startDate.setDate(dateToday.getDate() + 14)
+        } else if (getHour >= 12 && getDate == 15) {
+            startDate.setMonth(dateToday.getMonth() + 1, 1);
+        } else if (getHour < 12 && getDate == 13) {
+          	startDate.setMonth(dateToday.getMonth() + 1, 1);
+        } else {
+					
+				} 
+        return startDate;
+    }
+});
 
 //Evento 
 
@@ -128,12 +141,42 @@ function mostrarModal(e){
 
 //CÓDIGO PARA VALIDACIÓN DE FORMULARIO Nº 2
 
+
 //Variables y constantes
 const formulario2 = document.getElementById("formulario-2");
 const ReservarBtn2 = document.getElementById('reservar-2');
 const nombreApellido2 = document.getElementById('nombre-2');
 const invitadosReserva2 = document.getElementById('cantidad-2');
 const fechaReserva_2 = document.getElementById('fecha-2');
+
+// Fecha validar input tipo date - Formulario 2
+$(function () { 
+    //var dateToday = new Date(); 
+    
+    $('#fecha-2').datepicker().datepicker();
+    $('#fecha-2').datepicker('option', 'minDate', mdate());
+  
+    function mdate(){
+        // If current date is 1st or 15th & after 12:00pm disable current date
+        var startDate = new Date(), 
+        returnVal = 0,
+        dateToday = new Date(), 
+        getDate = dateToday.getDate(),
+        getHour = dateToday.getHours();      
+        if(getHour >= 12 && getDate == 1) {
+            startDate.setDate(dateToday.getDate() + 14)
+        } else if (getHour >= 12 && getDate == 15) {
+            startDate.setMonth(dateToday.getMonth() + 1, 1);
+        } else if (getHour < 12 && getDate == 13) {
+          	startDate.setMonth(dateToday.getMonth() + 1, 1);
+        } else {
+					
+				} 
+        return startDate;
+    }
+});
+
+
 
 //Evento 
 
@@ -239,6 +282,34 @@ const ReservarBtn3 = document.getElementById('reservar-3');
 const nombreApellido3 = document.getElementById('nombre-3');
 const invitadosReserva3 = document.getElementById('cantidad-3');
 const fechaReserva_3 = document.getElementById('fecha-3');
+
+
+// Fecha validar input tipo date - Formulario 3
+$(function () { 
+    //var dateToday = new Date(); 
+    
+    $('#fecha-3').datepicker().datepicker();
+    $('#fecha-3').datepicker('option', 'minDate', mdate());
+  
+    function mdate(){
+        // If current date is 1st or 15th & after 12:00pm disable current date
+        var startDate = new Date(), 
+        returnVal = 0,
+        dateToday = new Date(), 
+        getDate = dateToday.getDate(),
+        getHour = dateToday.getHours();      
+        if(getHour >= 12 && getDate == 1) {
+            startDate.setDate(dateToday.getDate() + 14)
+        } else if (getHour >= 12 && getDate == 15) {
+            startDate.setMonth(dateToday.getMonth() + 1, 1);
+        } else if (getHour < 12 && getDate == 13) {
+          	startDate.setMonth(dateToday.getMonth() + 1, 1);
+        } else {
+					
+				} 
+        return startDate;
+    }
+});
 
 //Evento 
 

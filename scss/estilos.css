@@ -193,6 +193,7 @@ h5 {
 .portada {
   background-image: url("../img/portada-2.jpg");
   background-attachment: fixed;
+  background-position: top;
   height: 40rem;
   margin-bottom: 5rem;
 }
@@ -371,6 +372,18 @@ h5 {
   font-size: 2rem;
 }
 
+.table__content {
+  font-size: 2rem;
+}
+
+.btn__carrito {
+  font-size: 2rem;
+}
+
+.total {
+  font-size: 4rem;
+}
+
 .nosotros {
   height: 100%;
   color: #000000;
@@ -530,8 +543,8 @@ h5 {
 }
 
 .modalContenedor__modal {
-  width: 70%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
   background-color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -620,6 +633,8 @@ h5 {
 
 .modalContenedor__modal {
   padding: 2rem;
+  width: 50%;
+  height: 100%;
 }
 
 .title__contacto {
@@ -685,6 +700,54 @@ h5 {
   }
   .contacto__input, .contacto__consulta {
     padding: 2rem;
+  }
+}
+
+.contenedor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.testimoniales {
+  padding: 2rem;
+  border: 1px dotted black;
+  border-radius: 2rem;
+  -ms-flex-preferred-size: calc(50% - 3rem);
+      flex-basis: calc(50% - 3rem);
+}
+
+.testimoniales__caja {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.testimoniales__img {
+  width: 50rem;
+  height: 30rem;
+  border-radius: 2rem;
+}
+
+.testimoniales__title {
+  font-size: 3rem;
+}
+
+@media only screen and (min-width: 1px) and (max-width: 968px) {
+  .contenedor {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .testimoniales {
+    margin-top: 5rem;
   }
 }
 /*# sourceMappingURL=estilos.css.map */

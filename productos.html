@@ -35,6 +35,7 @@
                     <a href="productos.html" class="navegacion__item">Productos</a>
                     <a href="reservas.html" class="navegacion__item">Reservas</a>
                     <a href="contacto.html" class="navegacion__item">Contacto</a>
+                    <a href="testimoniales.html" class="navegacion__item">Testimoniales</a>
                     <a href="#" class="navegacion__item--cerrar">
                         <i class="fas fa-times"></i>
                     </a>
@@ -66,7 +67,7 @@
                         <tbody></tbody>
                         </thead>
                     </table>
-                    <a href="" id="vaciar-carrito" type="button" class="btn btn-dark">Vaciar Carrito</a>
+                    <a href="" id="vaciar-carrito" type="button" class="btn btn-dark btn__carrito">Vaciar Carrito</a>
                 </div>
             </li>
         </ul>
@@ -163,6 +164,7 @@
             <div class="footer__socialmedia">
                 <ul class="footer__lista">
                     <li>
+                        <a href=""><i class="footer__item fab fa-whatsapp" onclick="wsp();"></i></a>
                         <a href=""><i class="footer__item fab fa-facebook-square"></i></a>
                         <a href=""><i class="footer__item fab fa-instagram"></i></a>
                         <a href=""><i class="footer__item fab fa-youtube"></i></a>
@@ -183,6 +185,10 @@
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/605289fcd0.js" crossorigin="anonymous"></script>
     <script src="js/carrito.js"></script>
+    <script>
+        function wsp(){
+            window.open(`https://api.whatsapp.com/send?phone=3624266733&text=Hola, estoy interesado en conocer la cervecería Ceres`,'_blank')}
+    </script>
 </body>
 
 </html>

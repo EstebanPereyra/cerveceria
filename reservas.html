@@ -10,6 +10,7 @@
         content="Cerveceria, Cerveza, Cerveza Artesanal, Bar, Bares, Reserva en bar, Venta de cerveza">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="js/jquery/jquery-ui.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="scss/estilos.css">
     <title>Ceres - Reservas</title>
@@ -33,6 +34,7 @@
                     <a href="productos.html" class="navegacion__item">Productos</a>
                     <a href="reservas.html" class="navegacion__item">Reservas</a>
                     <a href="contacto.html" class="navegacion__item">Contacto</a>
+                    <a href="testimoniales.html" class="navegacion__item">Testimoniales</a>
                     <a href="#" class="navegacion__item--cerrar">
                         <i class="fas fa-times"></i>
                     </a>
@@ -56,7 +58,7 @@
                     <label for="cantidad" class="reserva__label">¿Cuántas personas están invitadas?</label>
                     <input type="number" id="cantidad" max="2" class="reserva__input cantidad">
                     <label for="fecha" class="reserva__label">Ingresa la fecha de reserva</label>
-                    <input type="date" id="fecha" class="reserva__input--fecha fecha">
+                    <input type="text" id="fecha" class="reserva__input--fecha fecha">
                     <button type="submit" value="Reservar lugar" class="reserva__input--btn" id="reservar">Reservar</button>
                 </form>
             </article>
@@ -70,7 +72,7 @@
                     <label for="cantidad-2" class="reserva__label">¿Cuántas personas están invitadas?</label>
                     <input type="number" id="cantidad-2" max="4" class="reserva__input cantidad">
                     <label for="fecha-2" class="reserva__label">Ingresa la fecha de reserva</label>
-                    <input type="date" id="fecha-2" class="reserva__input--fecha fecha">
+                    <input type="text" id="fecha-2" class="reserva__input--fecha fecha">
                     <button type="submit" value="Reservar lugar" class="reserva__input--btn" id="reservar-2">Reservar</button>
                 </form>
             </article>
@@ -84,7 +86,7 @@
                     <label for="cantidad-3" class="reserva__label">¿Cuántas personas están invitadas?</label>
                     <input type="number" id="cantidad-3" max="6" class="reserva__input cantidad">
                     <label for="fecha-3" class="reserva__label">Ingresa la fecha de reserva</label>
-                    <input type="date" id="fecha-3" class="reserva__input--fecha fecha">
+                    <input type="text" id="fecha-3" class="reserva__input--fecha fecha">
                     <button type="submit" value="Reservar lugar" class="reserva__input--btn" id="reservar-3">Reservar</button>
                 </form>
             </article>
@@ -102,6 +104,7 @@
             <div class="footer__socialmedia">
                 <ul class="footer__lista">
                     <li>
+                        <a href=""><i class="footer__item fab fa-whatsapp" onclick="wsp();"></i></a>
                         <a href=""><i class="footer__item fab fa-facebook-square"></i></a>
                         <a href=""><i class="footer__item fab fa-instagram"></i></a>
                         <a href=""><i class="footer__item fab fa-youtube"></i></a>
@@ -117,8 +120,15 @@
 
     </footer>
     <!-- Fin de Footer -->
-    <script src="https://kit.fontawesome.com/605289fcd0.js" crossorigin="anonymous"></script>
+    <script  src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="js/contacto.js"></script>
     <script src="js/reservas-2.js"></script>
+    <script src="js/jquery/jquery-ui.js"></script>
+    <script src="https://kit.fontawesome.com/605289fcd0.js" crossorigin="anonymous"></script>
+    <script>
+        function wsp(){
+            window.open(`https://api.whatsapp.com/send?phone=3624266733&text=Hola, estoy interesado en conocer la cervecería Ceres`,'_blank')}
+    </script>
 </body>
 
 </html>

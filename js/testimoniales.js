@@ -1,4 +1,4 @@
-const jsonLocal = './json/data.json';
+const jsonLocal = 'http://127.0.0.1:5500/js/json/data.json';
 
 let misDatos = [];
 $.getJSON(jsonLocal,function(data,status){
@@ -19,12 +19,14 @@ function pintarCards(array){
         
         let div = document.createElement('div');
         
-        div.className = 'card'
+        div.className = 'testimoniales'
         
-        div.innerHTML = `<div>
-                            <img src=${element.img} alt="testimonio">
-                            <h3>${element.name}</h3>
-                            <p>${element.mensaje}</p>
+        div.innerHTML = `<div class="testimoniales__caja">
+                            <img class="testimoniales__img" src=${element.img} alt="testimonio">
+                            <div class="class="testimoniales__body">
+                            <h5 class="testimoniales__title">${element.name}</h5>
+                            <p class="testimoniales__msj"">${element.mensaje}</p>
+                            </div>
                         </div>`
         
     

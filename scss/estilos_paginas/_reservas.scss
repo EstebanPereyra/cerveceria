@@ -61,8 +61,8 @@
     align-items: center;
     text-align: center;
     &__modal {
-        width: 70%;
-        height: 100%;
+        width: 50%;
+        height: 50%;
         background-color: #ffffff;
         display: flex;
         flex-direction: column;
@@ -131,5 +131,7 @@
     height: 100%;
     &__modal {
         padding: 2rem;
+        width: 50%;
+        height: 100%;
     }
 }
