@@ -1,4 +1,4 @@
-const jsonLocal = '.json/data.json';
+const jsonLocal = 'js/json/data.json';
 
 let misDatos = [];
 $.getJSON(jsonLocal,function(data,status){
