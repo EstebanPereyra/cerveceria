@@ -56,7 +56,7 @@
                     <label for="nombre" class="reserva__label">Nombre y apellido</label>
                     <input type="text" id="nombre" class="reserva__input nombre">
                     <label for="cantidad" class="reserva__label">¿Cuántas personas están invitadas?</label>
-                    <input type="number" id="cantidad" max="2" class="reserva__input cantidad">
+                    <input type="number" id="cantidad" min="1" max="2" class="reserva__input cantidad">
                     <label for="fecha" class="reserva__label">Ingresa la fecha de reserva</label>
                     <input type="text" id="fecha" class="reserva__input--fecha fecha">
                     <button type="submit" value="Reservar lugar" class="reserva__input--btn" id="reservar">Reservar</button>
@@ -70,7 +70,7 @@
                     <label for="nombre-2" class="reserva__label">Nombre y apellido</label>
                     <input type="text" id="nombre-2" class="reserva__input nombre">
                     <label for="cantidad-2" class="reserva__label">¿Cuántas personas están invitadas?</label>
-                    <input type="number" id="cantidad-2" max="4" class="reserva__input cantidad">
+                    <input type="number" id="cantidad-2" min="1" max="4" class="reserva__input cantidad">
                     <label for="fecha-2" class="reserva__label">Ingresa la fecha de reserva</label>
                     <input type="text" id="fecha-2" class="reserva__input--fecha fecha">
                     <button type="submit" value="Reservar lugar" class="reserva__input--btn" id="reservar-2">Reservar</button>
@@ -84,7 +84,7 @@
                     <label for="nombre-3" class="reserva__label">Nombre y apellido</label>
                     <input type="text" id="nombre-3" class="reserva__input nombre">
                     <label for="cantidad-3" class="reserva__label">¿Cuántas personas están invitadas?</label>
-                    <input type="number" id="cantidad-3" max="6" class="reserva__input cantidad">
+                    <input type="number" id="cantidad-3" min="1" max="6" class="reserva__input cantidad">
                     <label for="fecha-3" class="reserva__label">Ingresa la fecha de reserva</label>
                     <input type="text" id="fecha-3" class="reserva__input--fecha fecha">
                     <button type="submit" value="Reservar lugar" class="reserva__input--btn" id="reservar-3">Reservar</button>
@@ -100,19 +100,6 @@
     <!-- Inicio de footer -->
     <footer>
         <div class="footer">
-
-            <div class="footer__socialmedia">
-                <ul class="footer__lista">
-                    <li>
-                        <a href=""><i class="footer__item fab fa-whatsapp" onclick="wsp();"></i></a>
-                        <a href=""><i class="footer__item fab fa-facebook-square"></i></a>
-                        <a href=""><i class="footer__item fab fa-instagram"></i></a>
-                        <a href=""><i class="footer__item fab fa-youtube"></i></a>
-                        <a href=""><i class="footer__item fab fa-linkedin"></i></a>
-                    </li>
-                </ul>
-            </div>
-
             <div class="footer__copyright">
                 <p class="footer__txt">&copy Todos los derechos reservados - Esteban Pereyra</p>
             </div>
@@ -125,10 +112,6 @@
     <script src="js/reservas-2.js"></script>
     <script src="js/jquery/jquery-ui.js"></script>
     <script src="https://kit.fontawesome.com/605289fcd0.js" crossorigin="anonymous"></script>
-    <script>
-        function wsp(){
-            window.open(`https://api.whatsapp.com/send?phone=3624266733&text=Hola, estoy interesado en conocer la cervecería Ceres`,'_blank')}
-    </script>
 </body>
 
 </html>
